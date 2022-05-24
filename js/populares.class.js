@@ -5,12 +5,7 @@ class Populares{
         .then(response => response.json())
         .then(result => result.results)
         .then(data => {
-            const p={
-                titulo: data[0].title,
-                poster: data[0].poster_path,
-                nota: data[0].vote_average
-            }
-            return new Pelicula(p.titulo,p.poster,p.nota)
+            return data;
         })
         .catch(error => console.log(error))
     }
