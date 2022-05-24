@@ -1,10 +1,5 @@
 let página=1;
-document.querySelector(".mostrarMas").addEventListener("click", mostrarMas);
 
-async function mostrarMas(){
-    let películasPopulares= await Populares.getMásPopulares(++página);
-    buscaPeliculas(películasPopulares).forEach(item=>item.DibujaPelicula());
-}
 
 document.addEventListener("DOMContentLoaded",async function()
 {
@@ -30,6 +25,33 @@ document.addEventListener("DOMContentLoaded",async function()
     }
 });
 
+document.querySelector(".mostrarMas").addEventListener("click", mostrarMas);
+
+async function mostrarMas(){
+    let películasPopulares= await Populares.getMásPopulares(++página);
+    buscaPeliculas(películasPopulares).forEach(item=>item.DibujaPelicula());
+}
+
+async function mostrarInfo(pelicula){
+    document.querySelector(".offcanvas").innerHTML=
+    "<div class=\"offcanvas-header\">"+
+        "<h5 class=\"offcanvas-title\" id=\"offcanvasExampleLabel\">"+pelicula.querySelector(".titulo").textContent+"</h5>"+
+        "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"offcanvas\" aria-label=\"Close\"></button>"+
+    "</div>"+
+    "<div class=\"offcanvas-body\">"+
+        "<div><img width='80%' src=\""+pelicula.querySelector(".imagen").src+"\" alt=\"Poster de "+pelicula.querySelector(".titulo").textContent+"\"/></div>"+
+        "<div>Nota:<br/>"+
+            pelicula.querySelector(".nota").innerHTML+
+        "</div>"+
+        "<div>Sinopsis:<br/>"+
+            pelicula.querySelector(".sinopsis").textContent+
+        "</div>"+
+        "<div>Fecha de estreno:<br/>"+
+            pelicula.querySelector(".fecha").textContent+
+        "</div>"+
+    "</div>";
+}
+
 function buscaPeliculas(películas){
     const p=[];
     for (let i = 0; i < películas.length; i++) {
@@ -39,3 +61,26 @@ function buscaPeliculas(películas){
     return p;
 }
 
+//botón back to top
+let bttboton = document.getElementById("btn-back-to-top");
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    bttboton.style.display = "block";
+  } else {
+    bttboton.style.display = "none";
+  }
+}
+
+bttboton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

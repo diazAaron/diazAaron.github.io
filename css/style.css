@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    background-color: lightslategray;
 }
 .container-fluid{
     min-height: 100vh;
@@ -10,4 +11,19 @@ body{
     z-index: 20;
     transition: .5s;
     transform: scale(1.1);
+    cursor: pointer;
 }
+.contenido{
+    margin-left: 10%;
+    max-width: 80%;
+}
+.card{
+    padding: 0;
+    margin: 5% 0%;
+}
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
