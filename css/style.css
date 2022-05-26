@@ -2,10 +2,11 @@ body{
     margin: 0;
     padding: 0;
     background-color: lightslategray;
-}
-.container-fluid{
     min-height: 100vh;
     max-width: 100vw;
+}
+.container-fluid{
+    
 }
 .card:hover{
     z-index: 20;
@@ -26,4 +27,7 @@ body{
     bottom: 20px;
     right: 20px;
     display: none;
-  }
+}
+.mostrarMas{
+    width: 25%;
+}
