@@ -1,12 +1,14 @@
-class Cartelera{
-    static getNuevasPelículas = (página) => {
-        const url = `${API_BASE_URL}/3/movie/now_playing?api_key=${API_KEY}&language=es-ES&page=${página}`;
+'use strict'
+class Cartelera
+{
+    static getNuevasPeliculas = (pagina) => {
+        const url = `${API_BASE_URL}movie/now_playing?api_key=${API_KEY}&language=es-ES&page=1`
+    
+
         return fetch(url)
-        .then(response => response.json())
-        .then(result => result.results)
-        .then(data =>{
-            return data;
-        })
-        .catch(error => console.log(error))
+            .then(Response => Response.json())
+            .then(results => results.results)
+            .catch(error => console.log(error))
+        
     }
 }
