@@ -26,6 +26,7 @@ header{
 }
 
 h3, hr{
+    margin-top: 20px;
     margin-left: 185px;
 }
 
@@ -48,6 +49,54 @@ ul{
     color: #082444;
 }
 
+.container{
+    padding-top: 3vh;
+}
+
+
 .carousel-item > img{
     height: 50vh;
+    width: 18.9vw;
+    padding-left: 53px;
+}
+
+
+.carousel-control-next{
+    background-color: black;
+    opacity: 1;
+}
+
+.carousel-control-prev{
+    background-color: black;
+    opacity: 1;
+}
+
+.datos{
+    display: flex;
+    justify-content: center;
+}
+
+.datos > div{
+    padding: 15px;
+}
+
+button{
+    background-color: black;
+    font-size: 45px;
+    color: white;
+    padding-left: 60vw;
+    transition: 1s;
+}
+
+button:hover{
+    color: rgb(134, 0, 0);
+}
+
+.top{
+    display: flex;
+}
+
+.titulo{
+    width: 10vw;
+    font-size: 16px;
 }
