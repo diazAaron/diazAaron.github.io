@@ -32,6 +32,11 @@ li:hover{
     background-color: lightslategray;
     color: #082444;
 }
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: inherit;
+    color: inherit;
+    transition: 1s;
+}
 .card:hover{
     z-index: 20;
     transition: .5s;
