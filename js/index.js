@@ -40,13 +40,13 @@ async function mostrarInfo(pelicula){
     "</div>"+
     "<div class=\"offcanvas-body\">"+
         "<div><img width='80%' src=\""+pelicula.querySelector(".imagen").src+"\" alt=\"Poster de "+pelicula.querySelector(".titulo").textContent+"\"/></div>"+
-        "<div>Nota:<br/>"+
+        "<div><b>Nota:</b><br/>"+
             pelicula.querySelector(".nota").innerHTML+
         "</div>"+
-        "<div>Sinopsis:<br/>"+
+        "<div><b>Sinopsis:</b><br/>"+
             pelicula.querySelector(".sinopsis").textContent+
         "</div>"+
-        "<div>Fecha de estreno:<br/>"+
+        "<div><b>Fecha de estreno:</b><br/>"+
             pelicula.querySelector(".fecha").textContent+
         "</div>"+
     "</div>";
