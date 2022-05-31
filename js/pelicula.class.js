@@ -35,7 +35,7 @@ class Pelicula{
     DibujaCartelera(i)
     {
         let cuerpo = document.querySelector(".carousel-inner")
-        let image = this.imagen
+        let image = this.poster
         let title = this.titulo
 
         if(i == 0)
