@@ -1,17 +1,17 @@
 let página=1;
 
 
-document.addEventListener("DOMContentLoaded",async function()
+document.addEventListener("DOMContentLoaded", async function()
 {
-    let películasCartelera = await Cartelera.getNuevasPelículas(página);
+    let peliculas = await Cartelera.getNuevasPeliculas();
+    console.log(peliculas)
     
-    if(location.href.split("/").slice(-1)[0]=="index.html"){
-        for (let i = 0; i < 5; i++) {
-            let p = new Pelicula(películasCartelera[i].title, películasCartelera[i].poster_path,películasCartelera[i].vote_average);
-            
-        }
+    for(let i = 0; i<10; i++)
+    {
+        let cartelera = new Pelicula(peliculas[i].title, peliculas[i].poster_path, "", "", "")
+        cartelera.DibujaCartelera(i)
     }
-});
+})
 
 document.addEventListener("DOMContentLoaded",async function()
 {
