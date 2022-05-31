@@ -32,4 +32,23 @@ class Pelicula{
     valueOf(){
         return this.nota;
     }
+    DibujaCartelera(i)
+    {
+        let cuerpo = document.querySelector(".carousel-inner")
+        let image = this.imagen
+        let title = this.titulo
+
+        if(i == 0)
+        {
+            cuerpo.innerHTML += "<div class='carousel-item active'>" +
+                            "<img src='"+ IMAGE_BASE+image +"' class='d-block w-30'>" +
+                            "</div>";
+        }
+        else
+        {
+            cuerpo.innerHTML += "<div class='carousel-item'>" +
+                            "<img src='"+ IMAGE_BASE+image +"' class='d-block w-30'>" +
+                            "</div>";
+        }
+    }
 }
