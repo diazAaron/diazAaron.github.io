@@ -8,9 +8,6 @@ class Cartelera
         return fetch(url)
             .then(Response => Response.json())
             .then(results => results.results)
-            .then(data => {
-                return data;
-            })
             .catch(error => console.log(error))
         
     }
