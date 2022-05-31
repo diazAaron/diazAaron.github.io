@@ -35,20 +35,33 @@ class Pelicula{
     DibujaCartelera(i)
     {
         let cuerpo = document.querySelector(".carousel-inner")
-        let image = this.poster
-        let title = this.titulo
-
         if(i == 0)
         {
             cuerpo.innerHTML += "<div class='carousel-item active'>" +
-                            "<img src='"+ IMAGE_BASE+image +"' class='d-block w-30'>" +
-                            "</div>";
+                                    "<img src='"+ IMAGE_BASE+this.poster +"' class='d-block w-30'>" +
+                                    "<div class= 'datos'>" +
+                                        "<div class= 'titulo'>" +
+                                            "<span>" + this.titulo + "</span>"+
+                                        "</div>" +
+                                        "<div>" +
+                                            "<h4>" + this.nota + "</h4>" +
+                                        "</div>" +
+                                    "</div>" +
+                                "</div>";
         }
         else
         {
             cuerpo.innerHTML += "<div class='carousel-item'>" +
-                            "<img src='"+ IMAGE_BASE+image +"' class='d-block w-30'>" +
-                            "</div>";
+                                    "<img src='"+ IMAGE_BASE+this.poster +"' class='d-block w-30'>" +
+                                    "<div class= 'datos'>" +
+                                        "<div class= 'titulo'>" +
+                                            "<span>" + this.titulo + "</span>"+
+                                        "</div>" +
+                                        "<div>" +
+                                            "<h4>" + this.nota + "</h4>" +
+                                        "</div>" +
+                                    "</div>" +
+                                "</div>";
         }
     }
 }
